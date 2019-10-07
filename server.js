@@ -5,10 +5,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 // Files
 const keys = require('./config/keys');
+const items = require('./routes/api/items');
 
 // Middleware
 const app = express();
 app.use(bodyParser.json());
+
+// Routes
+app.use('/api/items', items);
 
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log(chalk.magenta(`MongoDB connected`)))
