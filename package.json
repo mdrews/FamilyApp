@@ -1,0 +1,28 @@
+{
+  "name": "FamilyApp",
+  "version": "1.0.0",
+  "description": "App for the Drews Family",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdrews/FamilyApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdrews/FamilyApp/issues"
+  },
+  "homepage": "https://github.com/mdrews/FamilyApp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "concurrently": "^4.1.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.3"
+  }
+}
