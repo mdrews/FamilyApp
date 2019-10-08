@@ -12,16 +12,25 @@ const ShoppingList = () => {
     { id: uuid(), name: 'Water' },
   ]);
 
-  console.log(items);
   return(<Container>
     <Button 
       color="dark"
+      style={{marginBottom: "2rem"}}
       onClick={() => {
         const name = prompt("Add an Item");
         if(name) { setItems([...items, { id: uuid(), name }])}
       }}>
-      
       Add Item</Button>
+    <ListGroup>
+      <TransitionGroup>
+        {items.map(item => {
+          return(
+          <CSSTransition key={item.id}>
+            <ListGroupItem>{item.name}</ListGroupItem>
+          </CSSTransition>)
+        })}
+      </TransitionGroup>
+    </ListGroup>
   </Container>);
 }
 
