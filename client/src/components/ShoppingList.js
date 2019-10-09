@@ -25,9 +25,10 @@ const ShoppingList = () => {
       <TransitionGroup>
         {items.map(item => {
           return(
-          <CSSTransition>
+          <CSSTransition key={item.id} classNames="fade" timeout={500} >
             <ListGroupItem>
               <Button color="danger"
+                className="remove-btn"
                 onClick={() => setItems([...items.filter(i => i.id !== item.id)])}>
                 &times;
               </Button>{item.name}</ListGroupItem>
