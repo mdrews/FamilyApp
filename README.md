@@ -1,8 +1,9 @@
 # DrewsApp
 App for the Drews Family
 
-# App Components
+## App Components
 - Shopping List
 - Chores
 - Calendar
 - Passwords
+- Bills
