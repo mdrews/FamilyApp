@@ -7,3 +7,4 @@ App for the Drews Family
 - Calendar
 - Passwords
 - Bills
+- Passwords
