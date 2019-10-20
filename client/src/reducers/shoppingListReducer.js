@@ -1,9 +1,19 @@
 import { ADD_ITEM, REMOVE_ITEM } from "../actions/types";
+import uuid from 'uuid';
 
-export const shoppingListReducer = (state = [], action) => {
+const initialState = [
+  { id: uuid(), name: 'Milk' },
+  { id: uuid(), name: 'Eggs' },
+  { id: uuid(), name: 'Steak' },
+  { id: uuid(), name: 'Water' },
+];
+
+export const shoppingListReducer = (state = initialState, action) => {
   switch(action.type) {
     case ADD_ITEM: 
-      return [...state. action.item];
+      console.log('add reducer');
+      console.log(action.name);
+      return [...state, { id: uuid(), name: action.name }];
     case REMOVE_ITEM:
       return [...state.filter(item => item.id !== action.id)];
     default:

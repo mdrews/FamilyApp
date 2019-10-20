@@ -4,11 +4,11 @@ import AppHeader from './components/AppHeader';
 import ShoppingList from './components/ShoppingList';
 
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <AppHeader />
-      <ShoppingList />
+      <ShoppingList {...props} />
     </div>
   );
 }

@@ -1,9 +1,11 @@
 import { ADD_ITEM, REMOVE_ITEM } from "./types"
 
-export const addItem = (item) => {
+export const addItem = (name) => {
+  console.log('add!');
+  console.log();
   return {
     type: ADD_ITEM,
-    item
+    name
   };
 };
 

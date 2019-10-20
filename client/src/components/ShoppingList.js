@@ -3,7 +3,7 @@ import { Button, Container, ListGroup, ListGroupItem } from 'reactstrap'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import uuid from 'uuid';
 
-const ShoppingList = () => {
+const ShoppingList = props => {
   
   const [ items, setItems ] = useState([
     { id: uuid(), name: 'Milk' },
@@ -11,25 +11,25 @@ const ShoppingList = () => {
     { id: uuid(), name: 'Steak' },
     { id: uuid(), name: 'Water' },
   ]);
-
+  console.log(props);
   return(<Container>
     <Button 
       color="dark"
       style={{marginBottom: "2rem"}}
       onClick={() => {
         const name = prompt("Add an Item");
-        if(name) { setItems([...items, { id: uuid(), name }])}
+        if(name) props.addItem(name)
       }}>
       Add Item</Button>
     <ListGroup>
       <TransitionGroup>
-        {items.map(item => {
+        {props.shoppingList.map(item => {
           return(
           <CSSTransition key={item.id} classNames="fade" timeout={500} >
             <ListGroupItem>
               <Button color="danger"
                 className="remove-btn"
-                onClick={() => setItems([...items.filter(i => i.id !== item.id)])}>
+                onClick={() => props.removeItem(item.id)}>
                 &times;
               </Button>{item.name}</ListGroupItem>
           </CSSTransition>)

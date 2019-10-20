@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { addItem } from './actions/shoppingListActions';
+import { addItem, removeItem } from './actions/shoppingListActions';
 import { shoppingListReducer } from './reducers/shoppingListReducer';
 
 const mapStateToProps = state => {
@@ -16,8 +16,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addItem: () => {
-      dispatch(addItem(item));
+    addItem: name => {
+      dispatch(addItem(name));
+    },
+    removeItem: id => {
+      dispatch(removeItem(id));
     }
   }
 }
