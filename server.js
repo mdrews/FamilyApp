@@ -18,7 +18,7 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: tru
   .then(() => console.log(chalk.magenta(`MongoDB connected`)))
   .catch(error => console.log(chalk.red(`Error connecting to MongoDB: ${error}`)));
 
-const port = process.env.port || 5000;
+const port = process.env.port || 5501;
 
 app.listen(port, () => {
   console.log(`Server alive and listening on port ${chalk.blue(port)}`);

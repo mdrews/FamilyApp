@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect, Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { addItem, removeItem } from './actions/shoppingListActions';
 import { shoppingListReducer } from './reducers/shoppingListReducer';
+import uuid from 'uuid';
 
 const mapStateToProps = state => {
   return {
@@ -25,7 +27,24 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const store = createStore(shoppingListReducer);
+const initialState = [
+  { id: uuid(), name: 'Milk' },
+  { id: uuid(), name: 'Eggs' },
+  { id: uuid(), name: 'Steak' },
+  { id: uuid(), name: 'Water' },
+];
+
+const middleware = [thunk];
+
+const store = createStore(
+  shoppingListReducer, 
+  initialState, 
+  compose(
+    applyMiddleware(...middleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);
+
 const Container = connect(mapStateToProps, mapDispatchToProps)(App);
 
 ReactDOM.render(
