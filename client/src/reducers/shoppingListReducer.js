@@ -11,8 +11,6 @@ const initialState = [
 export const shoppingListReducer = (state = initialState, action) => {
   switch(action.type) {
     case ADD_ITEM: 
-      console.log('add reducer');
-      console.log(action.name);
       return [...state, { id: uuid(), name: action.name }];
     case REMOVE_ITEM:
       return [...state.filter(item => item.id !== action.id)];
