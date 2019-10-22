@@ -5,12 +5,6 @@ import uuid from 'uuid';
 
 const ShoppingList = props => {
   
-  const [ items, setItems ] = useState([
-    { id: uuid(), name: 'Milk' },
-    { id: uuid(), name: 'Eggs' },
-    { id: uuid(), name: 'Steak' },
-    { id: uuid(), name: 'Water' },
-  ]);
   console.log(props);
   return(<Container>
     <Button 
@@ -23,7 +17,7 @@ const ShoppingList = props => {
       Add Item</Button>
     <ListGroup>
       <TransitionGroup>
-        {props.shoppingList.map(item => {
+        {props.shoppingList && props.shoppingList.map(item => {
           return(
           <CSSTransition key={item.id} classNames="fade" timeout={500} >
             <ListGroupItem>

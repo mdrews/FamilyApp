@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { addItem, removeItem } from './actions/shoppingListActions';
 import { shoppingListReducer } from './reducers/shoppingListReducer';
 import uuid from 'uuid';
+import { GET_ITEMS } from './actions/types';
 
 const mapStateToProps = state => {
   return {
@@ -23,6 +24,9 @@ const mapDispatchToProps = dispatch => {
     },
     removeItem: id => {
       dispatch(removeItem(id));
+    },
+    getItems: () => {
+      dispatch(GET_ITEMS())
     }
   }
 }
@@ -38,7 +42,7 @@ const middleware = [thunk];
 
 const store = createStore(
   shoppingListReducer, 
-  initialState, 
+  initialState,
   compose(
     applyMiddleware(...middleware),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
