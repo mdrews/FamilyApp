@@ -7,8 +7,6 @@ export const getItems = () => {
 }
 
 export const addItem = (name) => {
-  console.log('add!');
-  console.log();
   return {
     type: ADD_ITEM,
     name

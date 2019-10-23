@@ -6,14 +6,13 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { addItem, removeItem } from './actions/shoppingListActions';
+import { addItem, removeItem, getItems } from './actions/shoppingListActions';
 import { shoppingListReducer } from './reducers/shoppingListReducer';
 import uuid from 'uuid';
-import { GET_ITEMS } from './actions/types';
 
 const mapStateToProps = state => {
   return {
-    shoppingList: state
+    shoppingList: state.items
   }
 }
 
@@ -26,17 +25,17 @@ const mapDispatchToProps = dispatch => {
       dispatch(removeItem(id));
     },
     getItems: () => {
-      dispatch(GET_ITEMS())
+      dispatch(getItems());
     }
   }
 }
 
-const initialState = [
+const initialState = { loading: false, items: [
   { id: uuid(), name: 'Milk' },
   { id: uuid(), name: 'Eggs' },
   { id: uuid(), name: 'Steak' },
   { id: uuid(), name: 'Water' },
-];
+]};
 
 const middleware = [thunk];
 

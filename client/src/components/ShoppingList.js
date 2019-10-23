@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Container, ListGroup, ListGroupItem } from 'reactstrap'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import uuid from 'uuid';
 
 const ShoppingList = props => {
+
+  useEffect(() => {
+    props.getItems();
+  })
   
   console.log(props);
   return(<Container>
