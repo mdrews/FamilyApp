@@ -6,9 +6,8 @@ const ShoppingList = props => {
 
   useEffect(() => {
     props.getItems();
-  })
+  });
   
-  console.log(props);
   return(<Container>
     <Button 
       color="dark"
@@ -20,7 +19,7 @@ const ShoppingList = props => {
       Add Item</Button>
     <ListGroup>
       <TransitionGroup>
-        {props.shoppingList && props.shoppingList.map(item => {
+        {props.shoppingList.items && props.shoppingList.items.map(item => {
           return(
           <CSSTransition key={item.id} classNames="fade" timeout={500} >
             <ListGroupItem>
