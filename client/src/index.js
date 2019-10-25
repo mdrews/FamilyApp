@@ -30,12 +30,14 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const initialState = { loading: false, items: [
-  { id: uuid(), name: 'Milk' },
-  { id: uuid(), name: 'Eggs' },
-  { id: uuid(), name: 'Steak' },
-  { id: uuid(), name: 'Water' },
-]};
+// const initialState = { loading: false, items: [
+//   { id: uuid(), name: 'Milk' },
+//   { id: uuid(), name: 'Eggs' },
+//   { id: uuid(), name: 'Steak' },
+//   { id: uuid(), name: 'Water' },
+// ]};
+
+const initialState = { loading: false, items: [] };
 
 const middleware = [thunk];
 
