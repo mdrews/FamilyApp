@@ -3,11 +3,9 @@ import { Button, Container, ListGroup, ListGroupItem } from 'reactstrap'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const ShoppingList = props => {
-  console.log(props.shoppingList);
   useEffect(() => {
     props.getItems();
   }, []);
-  console.log(props.shoppingList.item);
   return(<Container>
     <Button 
       color="dark"
