@@ -8,7 +8,6 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { addItem, removeItem, getItems } from './actions/shoppingListActions';
 import { shoppingListReducer } from './reducers/shoppingListReducer';
-import uuid from 'uuid';
 
 const mapStateToProps = state => {
   return {

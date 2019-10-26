@@ -14,12 +14,19 @@ export const getItems = () => dispatch => {
     )
 }
 
-export const addItem = (name) => {
-  return {
-    type: ADD_ITEM,
-    name
-  }
-}
+export const addItem = name => dispatch => {
+  dispatch(setItemsLoading());
+  console.log('api add item');
+  console.log(name);
+  axios
+    .post('/api/items', { name })
+    .then(res => 
+      dispatch({
+        type: ADD_ITEM,
+        payload: res.data
+      })
+    );
+};
 
 export const removeItem = (id) => {
   return {

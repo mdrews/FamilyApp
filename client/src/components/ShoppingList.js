@@ -3,8 +3,9 @@ import { Button, Container, ListGroup, ListGroupItem } from 'reactstrap'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const ShoppingList = props => {
+
   useEffect(() => {
-    props.getItems();
+    props && props.getItems();
   }, []);
   return(<Container>
     <Button 

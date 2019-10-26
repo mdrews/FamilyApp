@@ -9,6 +9,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log('/api/item POST');
+  console.log(req.body.name);
   const newItem = new Item({ name: req.body.name });
   newItem.save()
     .then(item => res.json(item))
