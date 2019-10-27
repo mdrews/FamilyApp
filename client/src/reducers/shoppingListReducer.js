@@ -8,7 +8,11 @@ export const shoppingListReducer = (state, action) => {
       console.log('add item reducer');
       console.log(state);
       console.log(action.payload);
-      return { loading: false, items: [...state.items.item, { id: action.payload.id, name: action.payload.name }]};
+      return {
+        ...state,
+        items: action.payload,
+        loading: false
+      }
     case REMOVE_ITEM:
       return { loading: false, items: state.items.filter(item => item.id !== action.id)};
     case SET_LOADING:

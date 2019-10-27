@@ -7,6 +7,8 @@ const ShoppingList = props => {
   useEffect(() => {
     props && props.getItems();
   }, []);
+
+  console.log(props);
   return(<Container>
     <Button 
       color="dark"
