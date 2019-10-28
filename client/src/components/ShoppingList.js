@@ -21,12 +21,13 @@ const ShoppingList = props => {
     <ListGroup>
       <TransitionGroup>
         {props.shoppingList.item && props.shoppingList.item.map(item => {
+          console.log(item);
           return(
-          <CSSTransition key={item.id} classNames="fade" timeout={500} >
+          <CSSTransition key={item._id} classNames="fade" timeout={500} >
             <ListGroupItem>
               <Button color="danger"
                 className="remove-btn"
-                onClick={() => props.removeItem(item.id)}>
+                onClick={() => props.removeItem(item._id)}>
                 &times;
               </Button>{item.name}</ListGroupItem>
           </CSSTransition>)
