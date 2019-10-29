@@ -8,3 +8,4 @@ App for the Drews Family
 - Passwords
 - Bills
 - Passwords
+- Family Chat
