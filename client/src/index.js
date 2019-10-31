@@ -10,6 +10,8 @@ import { addItem, removeItem, getItems } from './actions/shoppingListActions';
 import { shoppingListReducer } from './reducers/shoppingListReducer';
 
 const mapStateToProps = state => {
+  console.log("===STATE===");
+  console.log(state);
   return {
     shoppingList: state.items
   }
@@ -28,13 +30,6 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-
-// const initialState = { loading: false, items: [
-//   { id: uuid(), name: 'Milk' },
-//   { id: uuid(), name: 'Eggs' },
-//   { id: uuid(), name: 'Steak' },
-//   { id: uuid(), name: 'Water' },
-// ]};
 
 const initialState = { loading: false, items: [] };
 
