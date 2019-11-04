@@ -4,7 +4,7 @@ App for the Drews Family
 ## App Components
 - Shopping List
 - Recipes
-- Chores
+- Chores with recurrance
 - Calendar
 - Passwords
 - Bills
