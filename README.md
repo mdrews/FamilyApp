@@ -2,7 +2,7 @@
 App for the Drews Family
 
 ## App Components
-- Shopping List
+- Shopping List with crossing off ability
 - Recipes
 - Chores with recurrance
 - Calendar
