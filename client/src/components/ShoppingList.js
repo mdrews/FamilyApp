@@ -24,12 +24,14 @@ const ShoppingList = props => {
           console.log(item);
           return(
           <CSSTransition key={item._id} classNames="fade" timeout={500} >
-            <ListGroupItem>
+            <ListGroupItem onClick={() => item.name.strike()}>
               <Button color="danger"
                 className="remove-btn"
                 onClick={() => props.removeItem(item._id)}>
                 &times;
-              </Button>{item.name}</ListGroupItem>
+              </Button>
+              {item.name}
+            </ListGroupItem>
           </CSSTransition>)
         })}
       </TransitionGroup>
