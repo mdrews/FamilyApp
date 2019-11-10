@@ -8,7 +8,6 @@ const ShoppingList = props => {
     props && props.getItems();
   }, []);
 
-  console.log(props);
   return(<Container>
     <Button 
       color="dark"
@@ -21,7 +20,6 @@ const ShoppingList = props => {
     <ListGroup>
       <TransitionGroup>
         {props.shoppingList.item && props.shoppingList.item.map(item => {
-          console.log(item);
           return(
           <CSSTransition key={item._id} classNames="fade" timeout={500} >
             <ListGroupItem onClick={() => item.name.strike()}>
