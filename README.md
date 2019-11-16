@@ -7,7 +7,7 @@ App for the Drews Family
 - Chores with recurrance and crossing off
 - Calendar
 - Passwords
-- Bills - DTE, Consumers, GFL, Garbage
+- Bills - DTE, Consumers, GFL, Garbage, car - vw, car - fusion
 - Passwords
 - Family Chat
 - stuff
