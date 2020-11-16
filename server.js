@@ -20,6 +20,7 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: tru
 
 const port = process.env.port || 5501;
 
+// Start Server
 app.listen(port, () => {
   console.log(`Server alive and listening on port ${chalk.blue(port)}`);
 });
